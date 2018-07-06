@@ -1,0 +1,34 @@
+# ignore Eclipse folders and files
+/.externalToolBuilders/
+/.settings/
+/.buildpath
+/.project*
+
+# ignore IntelliJ folders and files
+/.idea/
+
+# ignore NetBeans folders and files
+.nb-gradle/
+nbbuild/
+nbdist/
+nbproject/
+nbactions.xml
+/build/
+/dist/
+
+
+# never ignore the following files
+!.gitattributes
+!.htaccess
+
+
+# ignore the following folders and files
+vendor/
+/composer
+/composer.phar
+desktop.ini
+thumbs.db
+
+config.*properties
+!config.dist.properties
+

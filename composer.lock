@@ -1,0 +1,76 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "33036d458d02dda16b61ee00aceeb866",
+    "packages": [
+        {
+            "name": "rosasurfer/ministruts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rosasurfer/ministruts.git",
+                "reference": "88bfd09c1e79b3eb6990af8e3234fae621dbb667"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rosasurfer/ministruts/zipball/88bfd09c1e79b3eb6990af8e3234fae621dbb667",
+                "reference": "88bfd09c1e79b3eb6990af8e3234fae621dbb667",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^5.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.8.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ],
+                "files": [
+                    "src/load.php"
+                ]
+            },
+            "license": [
+                "WTFPL"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Walther",
+                    "email": "ministruts@rosasurfer.com"
+                }
+            ],
+            "description": "Struts 1.2 inspired MVC web framework for PHP",
+            "homepage": "http://ministruts.rosasurfer.com/",
+            "support": {
+                "source": "https://github.com/rosasurfer/ministruts/tree/master",
+                "issues": "https://github.com/rosasurfer/ministruts/issues"
+            },
+            "time": "2018-07-05T08:35:45+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "rosasurfer/ministruts": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.6"
+    },
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "5.6"
+    }
+}

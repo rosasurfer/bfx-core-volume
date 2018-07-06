@@ -1,0 +1,30 @@
+{
+   "name":        "rosasurfer/bfx-volume",
+   "description": "BankersFX license server",
+   "type":        "project",
+   "license":     "WTFPL",
+   "authors": [{
+       "name":  "Peter Walther",
+       "email": "bfx@rosasurfer.com"
+   }],
+   "config": {
+      "platform": {
+         "php": "5.6"
+      },
+      "optimize-autoloader": true
+   },
+   "repositories": [
+      { "type": "vcs", "url": "https://github.com/rosasurfer/ministruts" },
+      { "packagist.org": false }
+   ],       
+   "require": {
+      "php":                   ">=5.6",
+      "rosasurfer/ministruts": "^0.8@dev"
+   },
+   "autoload": {
+      "classmap": ["app/"] 
+   },   
+   "scripts": {
+      "post-install-cmd": "bash bin/git/check-setup.sh post-checkout post-merge"
+   }    
+}
