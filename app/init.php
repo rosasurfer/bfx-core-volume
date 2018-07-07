@@ -3,7 +3,7 @@ use rosasurfer\Application;
 use rosasurfer\util\PHP;
 
 // class loader
-$appRoot=dirName(__DIR__);
+$appRoot = dirName(__DIR__);
 require($appRoot.'/vendor/autoload.php');
 
 
