@@ -1,6 +1,6 @@
 {
    "name":        "rosasurfer/bfx-volume",
-   "description": "Proof of concept that the BankersFX Core Volume indicator is not based on a data feed.",
+   "description": "Proof of concept for the supposed but fake BankersFX volume data feed",
    "type":        "project",
    "license":     "WTFPL",
    "authors": [{
