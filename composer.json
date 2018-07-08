@@ -14,17 +14,19 @@
       "optimize-autoloader": true
    },
    "repositories": [
-      { "type": "vcs", "url": "https://github.com/rosasurfer/ministruts" },
+      { "type": "vcs",
+        "url":  "https://github.com/rosasurfer/ministruts"
+      },
       { "packagist.org": false }
-   ],       
+   ],
    "require": {
       "php":                   ">=5.6",
       "rosasurfer/ministruts": "^0.8@dev"
    },
    "autoload": {
-      "classmap": ["app/"] 
-   },   
+      "classmap": ["app/"]
+   },
    "scripts": {
       "post-install-cmd": "bash bin/git/check-setup.sh post-checkout post-merge"
-   }    
+   }
 }
