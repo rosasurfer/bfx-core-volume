@@ -1,11 +1,11 @@
 <?php
+namespace rosasurfer\bfx\controller\actions;
+
 use rosasurfer\log\Logger;
 use rosasurfer\ministruts\Action;
 use rosasurfer\ministruts\ActionForward;
 use rosasurfer\ministruts\Request;
 use rosasurfer\ministruts\Response;
-
-
 
 
 /**
