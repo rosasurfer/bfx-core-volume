@@ -1,6 +1,6 @@
 {
    "name":        "rosasurfer/bfx-volume",
-   "description": "BankersFX license server",
+   "description": "Proof of concept that the BankersFX Core Volume indicator is not based on a data feed. server",
    "type":        "project",
    "license":     "WTFPL",
    "authors": [{

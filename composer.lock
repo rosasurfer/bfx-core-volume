@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "59d8ef2f357838d46dc8a5622df4d8b2",
+    "content-hash": "f6b44359c5a1abcf13df3f6bfbaed445",
     "packages": [
         {
             "name": "rosasurfer/ministruts",
