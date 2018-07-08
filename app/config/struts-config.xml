@@ -3,16 +3,20 @@
 
 <struts-config>
 
-    <!-- ==================================================== Imports =================================================== -->
-    <imports>
-        <import value="rosasurfer/bfx/controller/actions/*"/>
-        <import value="rosasurfer/bfx/controller/forms/*"/>
-    </imports>
-
 
     <!-- ================================================ Action Mappings =============================================== -->
     <action-mappings>
-        <mapping name="home"  path="/"  include="home.phtml"/>
+        <mapping name="home"  path="/"  action="HomeAction">
+            <forward name="home"  include=".home"/>
+        </mapping>
+        
+        <mapping name="bonkers"  path="/Paypal/TFV/index.php"  action="BonkersAction">
+        </mapping>
     </action-mappings>
-    
+
+
+    <!-- ===================================================== Tiles ==================================================== -->
+    <tiles>
+        <tile name=".home"  file="home.phtml"/>
+    </tiles>
 </struts-config>
