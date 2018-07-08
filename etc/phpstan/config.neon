@@ -1,0 +1,67 @@
+#
+# alias phpstan='php7 -d memory_limit=256M -d short_open_tag=On /path/to/phpstan/bin/phpstan --ansi'
+#
+# phpstan analyse -a etc/phpstan/autoload.php -c etc/phpstan/config.neon --level=0 [--] <path>
+#
+
+parameters:
+    autoload_files:
+        - etc/phpstan/function-stubs.php                            # stubs for PHP extensions and procedural code
+        - vendor/rosasurfer/ministruts/etc/phpstan/function-stubs.php
+
+    fileExtensions:                                                 # additional files to analyse
+       #- html
+       #- phtml                                                     # TODO: Tile default vars trigger errors
+
+    excludes_analyse:
+        - .git/
+        - .settings/
+        - etc/
+        - vendor/
+
+    universalObjectCratesClasses:
+        - rosasurfer\ministruts\Page
+    
+    reportUnmatchedIgnoredErrors:           false
+    polluteScopeWithLoopInitialAssignments: true
+    polluteCatchScopeWithTryAssignments:    true
+
+    ignoreErrors:
+        # intentionally ignore these
+        - '/Call to ((static )?method|function) [^ ]+\(\) with incorrect case:/'                                    # seriously?
+        - '/Array \(([^ ]+)\[\]\) does not accept (\1\|)?null\b/'                                                   # NULL should be considered a value, not a type
+        - '/(Static )?property [^ ]+ \(([^ ]+)\) does not accept (\2\|)?null\b/i'                                   # - dito -
+        - '/Parameter #[0-9]+ [^ ]+ of class [^ ]+ constructor expects ([^ ]+), (\1\|)?null given\b/'               # - dito -
+        - '/Parameter #[0-9]+ [^ ]+ of (static )?(function|method) [^ ]+ expects ([^ ]+), (\3\|)?null given\b/'     # - dito -
+        - '/Calling method [^ ]+\(\) on possibly null value of type [^ ]+\|null\b/'
+        - "/Casting to (bool|int|float|string) something that's already (bool|int|float|string)/"                   # the current implementation ignores not initialized vars
+        - '/Strict comparison using [=!]== between (int|string) and null will always evaluate to (true|false)\b/'
+
+
+services:
+        # Service classes must be loaded via etc/phpstan/autoload.php (services are initialized
+        # before execution of block "parameters/autoload_files").
+    -
+        class: rosasurfer\db\orm\phpstan\DAO_Find_ReturnType
+        tags:
+            - phpstan.broker.dynamicMethodReturnTypeExtension
+    -
+        class: rosasurfer\db\orm\phpstan\DAO_FindAll_ReturnType
+        tags:
+            - phpstan.broker.dynamicMethodReturnTypeExtension
+            - phpstan.broker.dynamicStaticMethodReturnTypeExtension
+    -
+        class: rosasurfer\db\orm\phpstan\PersistableObject_Dao_ReturnType
+        tags:
+            - phpstan.broker.dynamicMethodReturnTypeExtension
+            - phpstan.broker.dynamicStaticMethodReturnTypeExtension
+    -
+        class: rosasurfer\db\orm\phpstan\PersistableObject_PopulateNew_ReturnType
+        tags:
+            - phpstan.broker.dynamicMethodReturnTypeExtension
+            - phpstan.broker.dynamicStaticMethodReturnTypeExtension
+    -
+        class: rosasurfer\core\phpstan\Singleton_GetInstance_ReturnType
+        tags:
+            - phpstan.broker.dynamicMethodReturnTypeExtension
+            - phpstan.broker.dynamicStaticMethodReturnTypeExtension
