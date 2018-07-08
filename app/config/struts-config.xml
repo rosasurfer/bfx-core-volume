@@ -2,21 +2,11 @@
 <!DOCTYPE struts-config SYSTEM "struts-config.dtd">
 
 <struts-config>
-
-
-    <!-- ================================================ Action Mappings =============================================== -->
-    <action-mappings>
-        <mapping name="home"  path="/"  action="HomeAction">
-            <forward name="home"  include=".home"/>
-        </mapping>
         
-        <mapping name="bonkers"  path="/Paypal/TFV/index.php"  action="BonkersAction">
-        </mapping>
+    <!-- ================================================ Action mappings =============================================== -->
+    <action-mappings>
+        <mapping name="home"     path="/"                      include="home.phtml"/>
+        <mapping name="bonkers"  path="/Paypal/TFV/index.php"  action="BonkersAction"/>
     </action-mappings>
 
-
-    <!-- ===================================================== Tiles ==================================================== -->
-    <tiles>
-        <tile name=".home"  file="home.phtml"/>
-    </tiles>
 </struts-config>
