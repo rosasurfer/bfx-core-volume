@@ -32,7 +32,7 @@ class BonkersAction extends Action {
         $expires = '{expiration}';
         $reply   = $account.'|'.$license.'|A|'.$expires.'|mt4tfv|ok';
 
-        Logger::log('Bonkers in action, reply: '.$reply, L_INFO);
+        Logger::log('reply: '.$reply, L_INFO);
         echo $reply;
         return null;
     }
