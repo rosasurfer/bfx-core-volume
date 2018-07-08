@@ -18,11 +18,11 @@ class BonkersAction extends Action {
      * {@inheritdoc}
      */
     public function execute(Request $request, Response $response) {
-        if (!$request->isSecure()) {
-            $url = $request->getUrl();
-            $url = 'https'.strRight($url, -4);
-            return new ActionForward('generic', $url, $redirect=true);
-        }
+        //if (!$request->isSecure()) {
+        //    $url = $request->getUrl();                                    // HTTPS is not required
+        //    $url = 'https'.strRight($url, -4);
+        //    return new ActionForward('generic', $url, $redirect=true);
+        //}
 
         // GET http://www.bankersfx.com/Paypal/TFV/index.php?id=TSR&lic={encoded-license}&rn=9&mt4={account}&ec=1
         // {account}|{license}|A|{expiration}|mt4tfv|ok
