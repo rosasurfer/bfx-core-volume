@@ -9,5 +9,11 @@
 
 <body>
 Proof of concept for the supposed but fake BankersFX volume data feed.
+
+<?
+/** @var Request $request */
+foreach ($request->getActionMessages() as $message) {?>
+    <div class="alert alert-danger textcenter"><p><?=hsc($message)?></p></div>
+<?}?>
 </body>
 </html>

@@ -9,10 +9,18 @@
     </imports>
 
 
+    <!-- =============================================== Global Forwards ================================================ -->
+    <global-forwards>
+        <forward name="redirect.home"  redirect="/"/>
+    </global-forwards>
+
+
     <!-- ================================================ Action mappings =============================================== -->
     <action-mappings>
-        <mapping name="home"     path="/"                      include="home.phtml"/>
-        <mapping name="bonkers"  path="/Paypal/TFV/index.php"  action="BonkersAction"/>
+        <mapping name="home"           path="/"  include="home.phtml"/>
+        
+        <mapping name="check-license"  path="/Paypal/TFV/index.php"     action="CheckLicenseAction"/>
+        <mapping name="download"       path="/Paypal/TFV/download.php"  action="DownloadAction"/>
     </action-mappings>
 
 </struts-config>

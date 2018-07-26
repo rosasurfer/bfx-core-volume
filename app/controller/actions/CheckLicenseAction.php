@@ -10,16 +10,16 @@ use rosasurfer\ministruts\Response;
 
 
 /**
- * BonkersAction
+ * CheckLicenseAction
  */
-class BonkersAction extends Action {
+class CheckLicenseAction extends Action {
 
 
     /**
      * {@inheritdoc}
      */
     public function execute(Request $request, Response $response) {
-        // the use of HTTPS is not required
+        // HTTPS is optional
         if (false && !$request->isSecure()) {
             $url = $request->getUrl();
             $url = 'https'.strRight($url, -4);
@@ -27,9 +27,9 @@ class BonkersAction extends Action {
         }
         $config = Config::getDefault();
 
-        // request:   GET https://www.bankersfx.com/Paypal/TFV/index.php?id=TSR&lic={encoded-license}&rn=9&mt4={account}&ec=1
-        // response: {account}|{license}|A|{expiration}|mt4tfv|ok
-        //       or:  ERROR: Membership Inactive|no
+        // request:  GET /Paypal/TFV/index.php?id=TSR&lic={encoded-license}&rn=9&mt4={account}&ec=1
+        // response: {account}|{plain-license}|A|{expiration}|mt4tfv|ok
+        //       or: ERROR: {error-msg}|no
 
         $account = $request->getParameter('mt4') ?: '0';
         $license = $config->get('bfx.accounts.'.$account, false);
@@ -39,7 +39,7 @@ class BonkersAction extends Action {
         }
         else {
             $appUrl = $request->getApplicationUrl();
-            $reply  = 'ERROR: Unknown account. Please go to '.$appUrl.' to configure access for your account.|no';
+            $reply  = 'ERROR: Unknown account number. Please go to '.$appUrl.' to configure access for your account.|no';
         }
 
         Logger::log('reply: '.$reply, L_INFO);
