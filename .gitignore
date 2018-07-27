@@ -31,4 +31,4 @@ thumbs.db
 
 config.*properties
 !config.dist.properties
-
+/data/
