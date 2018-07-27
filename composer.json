@@ -1,11 +1,11 @@
 {
    "name":        "rosasurfer/bfx-volume",
-   "description": "Proof of concept for the supposed but fake BankersFX volume data feed",
+   "description": "Proof of concept to run the BankersFX Core Volume indicator without a data feed.",
    "type":        "project",
    "license":     "WTFPL",
    "authors": [{
        "name":  "Peter Walther",
-       "email": "bfx@rosasurfer.com"
+       "email": "bfx-volume@rosasurfer.com"
    }],
    "config": {
       "platform": {
