@@ -101,7 +101,7 @@ fi
 
 
 # update access permissions and ownership for writing files
-DIRS="etc/log  etc/tmp"
+DIRS="data  etc/log  etc/tmp"
 
 for dir in $DIRS; do
     dir="$PROJECT_DIR/$dir/"
