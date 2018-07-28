@@ -1,7 +1,7 @@
 #!/usr/bin/env php56
 <?php
 /**
- * Command line version of the application's phpInfo() task accessible via http://{application-url}/?__phpinfo__.
+ * Command line version of the application's phpInfo() task accessible via http://{application-uri}/?__phpinfo__.
  */
 use rosasurfer\util\PHP;
 
