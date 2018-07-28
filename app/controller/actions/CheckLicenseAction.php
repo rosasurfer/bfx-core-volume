@@ -31,20 +31,21 @@ class CheckLicenseAction extends Action {
         // response: {account}|{plain-license}|A|{expiration}|mt4tfv|ok
         //       or: ERROR: {error-msg}|no
 
-        $account = $request->getParameter('mt4') ?: '0';
-        $license = $config->get('bfx.accounts.'.$account, false);
-        if ($license) {
+        $account = $request->getParameter('mt4');
+
+        if (strIsDigits($account)) {
+            $license = $config->get('bfx.accounts.'.$account, null);
+            if (!$license)
+                $license = $config->get('bfx.accounts.default');
             $expires = date('Ymd', time() + 1*MONTH);                       // extend license for 30 days
-            $reply   = $account.'|'.$license.'|A|'.$expires.'|mt4tfv|ok';
+            $reply = $account.'|'.$license.'|A|'.$expires.'|mt4tfv|ok';
         }
         else {
-            $appUrl = $request->getApplicationUrl();
-            $reply  = 'ERROR: Unknown account number. Please go to '.$appUrl.' to configure access for your account.|no';
+            $reply = 'ERROR: Unknown or missing account number.|no';
         }
 
         Logger::log('reply: '.$reply, L_INFO);
         echo $reply;
-
         return null;
     }
 }
