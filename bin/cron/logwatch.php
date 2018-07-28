@@ -1,4 +1,4 @@
-#!/usr/bin/env php
+#!/usr/bin/env php56
 <?php
 /**
  * Scans the application's PHP error logfile for entries and sends them by email to the configured log receivers.
