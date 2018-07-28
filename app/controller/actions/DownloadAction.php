@@ -41,12 +41,10 @@ class DownloadAction extends Action {
             // make the download non-cacheable
             header('Cache-control: private');
             header('Pragma: private');
-            header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+            header('Expires: '.gmDate(DATE_RFC2822, time() - 1*YEAR));
 
-            // erase an existing output buffer
+            // erase an existing output buffer and work around an IE bug (Content-Disposition is ignored)
             ob_get_level() && ob_end_clean();
-
-            // required for IE, otherwise Content-Disposition may be ignored
             ini_get_bool('zlib.output_compression') && PHP::ini_set('zlib.output_compression', false);
 
             // close the session to not block following requests

@@ -1,21 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts-config SYSTEM "struts-config.dtd">
 
 <struts-config>
 
-    <!-- ==================================================== Imports =================================================== -->
     <imports>
         <import value="rosasurfer/bfx/controller/actions/*"/>
     </imports>
 
 
-    <!-- =============================================== Global Forwards ================================================ -->
     <global-forwards>
         <forward name="redirect.home"  redirect="/"/>
     </global-forwards>
 
 
-    <!-- ================================================ Action mappings =============================================== -->
     <action-mappings>
         <mapping name="home"           path="/"  include="home.phtml"/>
         
