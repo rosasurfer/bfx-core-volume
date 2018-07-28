@@ -55,6 +55,6 @@ regardless of the MetaTrader account type (demo or real).
 
 Demonstration
 -------------
-The project is hosted on a demo server. To test with the demo server modify the line added to
+The project is hosted on a [demo server](http://bfx.rosasurfer.com/). To test with the demo server modify the line added to
 ```C:\Windows\System32\drivers\etc\hosts``` (read the network configuration section above under **Setup**) and replace
 **in the added line only** ```127.0.0.1``` by ```89.163.167.173```.
