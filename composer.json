@@ -1,11 +1,11 @@
 {
-   "name":        "rosasurfer/bfx-volume",
-   "description": "Proof of concept that the BankersFX Core Volume indicator is not based on a BankersFX data feed.",
+   "name":        "rosasurfer/bfx-core-volume",
+   "description": "Educational test case to proof that the BankersFX Core Volume indicator is not based on a BankersFX data feed.",
    "type":        "project",
    "license":     "WTFPL",
    "authors": [{
        "name":  "Peter Walther",
-       "email": "bfx-volume@rosasurfer.com"
+       "email": "bfx@rosasurfer.com"
    }],
    "config": {
       "platform": {
