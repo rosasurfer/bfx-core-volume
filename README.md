@@ -28,11 +28,11 @@ Setup
 
 * Configure a web server for the project. For Apache adjust one of the predefined templates in ```etc/httpd/apache*.conf```.
   The templates define the web domains for the project. If you want to use SSL adjust the paths to your server's SSL certificates
-  (SSL is **not** required to test the project).
+  (SSL is **not** required to run the project).
 
-* Edit your system's network configuration and point the defined domains to your local machine (instead of the internet).
-  To do this open the file ```C:\Windows\System32\drivers\etc\hosts``` in a **plain-text editor**, e.g. Notepad. You may need
-  administrator rights to edit the file (see [Edit The Hosts File in Windows 7/8/10](https://www.thewindowsclub.com/hosts-file-in-windows)).
+* Edit your system's network configuration and point the defined domains to your local machine instead of the internet. To do 
+  this open the file ```C:\Windows\System32\drivers\etc\hosts``` in a **plain-text editor**, e.g. Notepad. You may need admin
+  rights to edit the file (see [Edit The Hosts File in Windows 7/8/10](https://www.thewindowsclub.com/hosts-file-in-windows)).
   Add the following line exactly as typed anywhere in the file and save it:
   ```
   127.0.0.1   local.bfx.rosasurfer.com  www.bankersfx.com
