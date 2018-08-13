@@ -42,8 +42,7 @@ Setup
   [http://local.bfx.rosasurfer.com/](http://local.bfx.rosasurfer.com/) and 
   [http://www.bankersfx.com/](http://www.bankersfx.com/) must display the same following message in your web browser:
   ```
-  Educational test case to proof that the BankersFX Core Volume indicator is not based
-  on a BankersFX data feed.
+  Test case to prove that the data displayed by the BankersFX Core Volume indicator is not based on a data feed.
   ```
 
 
