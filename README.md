@@ -17,13 +17,16 @@ Setup
 -----
 * Clone the project or download and extract the ZIP archive:
   ```bash
+  git config --global core.symlinks true
   git clone https://github.com/rosasurfer/bfx-core-volume.git
   ```
+  To enable symbolic link support on Windows set the Git config option ```symlinks = true``` before cloning.
+
 
 * Use [Composer](http://getcomposer.org) to install the dependencies:
   ```bash
-  $ cd bfx-core-volume
-  $ php composer.phar install
+  cd bfx-core-volume
+  php composer.phar install
   ```
 
 * Configure a web server for the project. For Apache adjust one of the predefined templates in ```etc/httpd/apache*.conf```.
