@@ -20,7 +20,7 @@ Setup
   git config --global core.symlinks true
   git clone https://github.com/rosasurfer/bfx-core-volume.git
   ```
-  To enable symbolic link support on Windows set the Git config option ```symlinks = true``` before cloning.
+  To enable symbolic link support on Windows set the Git config option ```core.symlinks = true``` before cloning.
 
 
 * Use [Composer](http://getcomposer.org) to install the dependencies:
