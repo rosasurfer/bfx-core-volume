@@ -16,18 +16,18 @@ Requirements
 Setup
 -----
 * Clone the project or download and extract the ZIP archive:
-  ```bash
-  git config --global core.symlinks true
-  git clone https://github.com/rosasurfer/bfx-core-volume.git
-  ```
+```bash
+git config --global core.symlinks true
+git clone https://github.com/rosasurfer/bfx-core-volume.git
+```
   To enable symbolic link support on Windows set the Git config option ```core.symlinks = true``` before cloning.
 
 
 * Use [Composer](http://getcomposer.org) to install the dependencies:
-  ```bash
-  cd bfx-core-volume
-  php composer.phar install
-  ```
+```bash
+cd bfx-core-volume
+php composer.phar install
+```
 
 * Configure a web server for the project. For Apache adjust one of the predefined templates in ```etc/httpd/apache*.conf```.
   The templates define the web domains for the project. If you want to use SSL adjust the paths to your server's SSL certificates
@@ -37,16 +37,16 @@ Setup
   this open the file ```C:\Windows\System32\drivers\etc\hosts``` in a **plain-text editor**, e.g. Notepad. You may need admin
   rights to edit the file (see [Edit The Hosts File in Windows 7/8/10](https://www.thewindowsclub.com/hosts-file-in-windows)).
   Add the following line exactly as typed anywhere in the file and save it:
-  ```
-  127.0.0.1   local.bfx.rosasurfer.com  www.bankersfx.com
-  ```
+```
+127.0.0.1   local.bfx.rosasurfer.com  www.bankersfx.com
+```
 
 * Restart the web server and test the setup. If everything works correctly both links
   [http://local.bfx.rosasurfer.com/](http://local.bfx.rosasurfer.com/) and 
   [http://www.bankersfx.com/](http://www.bankersfx.com/) must display the same following message in your web browser:
-  ```
-  Test case to prove that the data displayed by the BankersFX Core Volume indicator is not based on a data feed.
-  ```
+```
+Test case to prove that the data displayed by the BankersFX Core Volume indicator is not based on a data feed.
+```
 
 
 Usage
