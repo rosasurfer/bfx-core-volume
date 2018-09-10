@@ -15,7 +15,7 @@ Requirements
 
 Setup
 -----
-* Clone the project or download and extract the ZIP archive. To enable symbolic link support on Windows set the Git config 
+* Clone the project or download and extract the ZIP archive. To enable Git support for symbolic links on Windows set the config 
   option ```core.symlinks = true``` before cloning:
 ```bash
 git config --global core.symlinks true
