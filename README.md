@@ -32,10 +32,10 @@ php composer.phar install
   The templates define the web domains for the project. If you want to use SSL adjust the paths to your server's SSL certificates
   (SSL is **not** required to run the project).
 
-* Edit your system's network configuration and point the defined domains to your local machine instead of the internet. To do 
+* Edit your system's network configuration and point the defined domains instead of the internet to your local machine. To do 
   this open the file ```C:\Windows\System32\drivers\etc\hosts``` in a **plain-text editor**, e.g. Notepad. You may need admin
   rights to edit the file (see [Edit The Hosts File in Windows 7/8/10](https://www.thewindowsclub.com/hosts-file-in-windows)).
-  Add the following line exactly as typed anywhere in the file and save it:
+  Add the following line exactly as shown anywhere in the file and save it:
 ```
 127.0.0.1   local.bfx.rosasurfer.com  www.bankersfx.com
 ```
@@ -50,8 +50,11 @@ Test case to prove that the data displayed by the BankersFX Core Volume indicato
 
 Usage
 -----
-Use the provided indicator as usual. As license code (aka the unique user id) enter **BANKERSSCAM** (11 capital letters)
-regardless of the MetaTrader account type (demo or real).
+Use the provided indicator as usual (see ```etc/mql/```). The indicator consists of an indicator file which goes into 
+```{terminal-data-directory}/mql4/indicators/``` and a library file which goes into ```{terminal-data-directory}/mql4/libraries/```.  
+
+As license code (aka the unique user id) enter **BANKERSSCAM** (11 capital letters) regardless of the MetaTrader account type 
+(demo or real).
 
 
 Demonstration
