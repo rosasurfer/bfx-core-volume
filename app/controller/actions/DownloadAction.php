@@ -39,8 +39,8 @@ class DownloadAction extends Action {
             header('Content-Length: '.fileSize($fullFilename));
 
             // make the download non-cacheable
-            header('Cache-control: private');
             header('Pragma: private');
+            header('Cache-control: private');
             header('Expires: '.gmDate(DATE_RFC2822, time() - 1*YEAR));
 
             // erase an existing output buffer and work around an IE bug (Content-Disposition is ignored)
