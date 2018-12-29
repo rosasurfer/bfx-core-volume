@@ -59,6 +59,8 @@ As license code (aka the unique user id) enter **BANKERSSCAM** (11 capital lette
 
 Demonstration
 -------------
-The project is hosted on a [demo server](http://bfx.rosasurfer.com/). To test with the demo server modify the line added to
-```C:\Windows\System32\drivers\etc\hosts``` (read the network configuration section above under **Setup**) and replace
-**in the added line only** ```127.0.0.1``` by ```89.163.167.173```.
+The project is hosted on a [demo server](http://bfx.rosasurfer.com/). To use it as a license server change the line added to
+```C:\Windows\System32\drivers\etc\hosts``` (read about the network configuration above) into
+```
+89.163.167.173  www.bankersfx.com
+```
