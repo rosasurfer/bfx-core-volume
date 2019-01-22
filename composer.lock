@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba82251495200f24c54a27c856864e20",
+    "content-hash": "b6ab1b94cafba598aa47c02ee6cd13c6",
     "packages": [
         {
             "name": "rosasurfer/ministruts",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rosasurfer/ministruts.git",
-                "reference": "4fbbc4fbc9598fb69caf1c90aabdfea02c65c5e5"
+                "reference": "36627e34cae749d675d26f1fdc6fb1c62b28e2d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rosasurfer/ministruts/zipball/4fbbc4fbc9598fb69caf1c90aabdfea02c65c5e5",
-                "reference": "4fbbc4fbc9598fb69caf1c90aabdfea02c65c5e5",
+                "url": "https://api.github.com/repos/rosasurfer/ministruts/zipball/36627e34cae749d675d26f1fdc6fb1c62b28e2d5",
+                "reference": "36627e34cae749d675d26f1fdc6fb1c62b28e2d5",
                 "shasum": ""
             },
             "require": {
@@ -29,7 +29,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.8.x-dev"
+                    "dev-master": "0.9.x-dev"
                 }
             },
             "autoload": {
@@ -50,12 +50,11 @@
                 }
             ],
             "description": "Struts 1.2 inspired MVC web framework for PHP",
-            "homepage": "http://ministruts.rosasurfer.com/",
             "support": {
-                "source": "https://github.com/rosasurfer/ministruts/tree/master",
+                "source": "https://github.com/rosasurfer/ministruts",
                 "issues": "https://github.com/rosasurfer/ministruts/issues"
             },
-            "time": "2019-01-04T03:13:52+00:00"
+            "time": "2019-01-22T04:41:29+00:00"
         }
     ],
     "packages-dev": [],

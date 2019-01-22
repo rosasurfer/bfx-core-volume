@@ -1,7 +1,6 @@
 <?php
 namespace rosasurfer\bfx\controller\actions;
 
-use rosasurfer\config\Config;
 use rosasurfer\log\Logger;
 use rosasurfer\ministruts\Action;
 use rosasurfer\ministruts\Request;
@@ -19,7 +18,7 @@ class DownloadAction extends Action {
      * {@inheritdoc}
      */
     public function execute(Request $request, Response $response) {
-        $config = Config::getDefault();
+        $config = $this->di()['config'];
         $file   = $request->getParameter('file');
 
         $files = [

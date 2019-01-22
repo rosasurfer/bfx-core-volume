@@ -1,7 +1,6 @@
 <?php
 namespace rosasurfer\bfx\controller\actions;
 
-use rosasurfer\config\Config;
 use rosasurfer\log\Logger;
 use rosasurfer\ministruts\Action;
 use rosasurfer\ministruts\ActionForward;
@@ -25,7 +24,7 @@ class CheckLicenseAction extends Action {
             $url = 'https'.strRight($url, -4);
             return new ActionForward('generic', $url, $redirect=true);
         }
-        $config = Config::getDefault();
+        $config = $this->di()['config'];
 
         // request:  GET /Paypal/TFV/index.php?id=TSR&lic={encoded-license}&rn=9&mt4={account}&ec=1
         // response: {account}|{plain-license}|A|{expiration}|mt4tfv|ok
