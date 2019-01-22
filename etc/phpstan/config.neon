@@ -6,12 +6,12 @@
 
 parameters:
     autoload_files:
-        - etc/phpstan/function-stubs.php                                # stubs for PHP extensions and procedural code
+        - etc/phpstan/function-stubs.php                                    # stubs for PHP extensions and procedural code
         - vendor/rosasurfer/ministruts/etc/phpstan/function-stubs.php
 
-    fileExtensions:                                                     # additional files to analyse
+    fileExtensions:                                                         # additional files to analyse
        #- html
-       #- phtml                                                         # TODO: Tile default vars trigger errors
+       #- phtml                                                             # TODO: Tile default vars trigger errors
 
     excludes_analyse:
         - .git/
@@ -43,9 +43,8 @@ parameters:
         - '/PHPDoc tag @param for parameter \$[^ ]+ with type array(<[^ |]+(\|[^ |]+)?>)? is not subtype of native type array<int, mixed>/'
 
 
-services:
-        # service classes must be loaded via etc/phpstan/autoload.php
-        # (services are initialized before execution of block "parameters/autoload_files")
+services: # Services must be loaded via cmd line option --autoload-file as they are
+          # instantiated before execution of block "parameters/autoload_files".
     -
         class: rosasurfer\phpstan\DAO_Find_ReturnType
         tags:
