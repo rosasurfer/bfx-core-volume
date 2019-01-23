@@ -34,9 +34,10 @@ class CheckLicenseAction extends Action {
         $account = $request->getParameter('mt4');
 
         if (strIsDigits($account)) {
-            $knownAccount = ($license = $config->get('bfx.accounts.'.$account, null));
-            if (!$license)
+            $knownAccount = (bool) ($license = $config->get('bfx.accounts.'.$account, null));
+            if (!$license) {
                 $license = $config->get('bfx.accounts.default');
+            }
             $expires = date('Ymd', time() + 1*MONTH);                       // extend license for 30 days
             $reply = $account.'|'.$license.'|A|'.$expires.'|mt4tfv|ok';
         }

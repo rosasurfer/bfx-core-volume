@@ -17,7 +17,7 @@ PHP::ini_set('memory_limit',     '128M'                            );
 
 // create a new application
 return new Application([
-    'app.dir.root'       => $appRoot,
-    'app.dir.config'     => __DIR__.'/config',
-    'app.global-helpers' => true,
+    'app.dir.root'   => $appRoot,
+    'app.dir.config' => __DIR__.'/config',
+    'app.globals'    => true,
 ]);
