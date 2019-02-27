@@ -7,6 +7,16 @@ A purely educational test case. It simulates a BankersFX license server and show
 institutional order flow does not hold true.
 
 
+Demonstration
+-------------
+The project is hosted on a [demo server](http://bfx.rosasurfer.com/). To use the indicator with the demo as a license server 
+(and spare project installation) change the line in
+```C:\Windows\System32\drivers\etc\hosts``` (read about the network configuration below) into
+```
+89.163.167.173  www.bankersfx.com
+```
+
+
 Requirements
 ------------
  * [PHP 5.6](http://php.net/)
@@ -55,12 +65,3 @@ Use the provided indicator as usual (see ```etc/mql/```). The indicator consists
 
 As license code (aka the unique user id) enter **BANKERSSCAM** (11 capital letters) regardless of the MetaTrader account type 
 (demo or real).
-
-
-Demonstration
--------------
-The project is hosted on a [demo server](http://bfx.rosasurfer.com/). To use it as a license server change the line in
-```C:\Windows\System32\drivers\etc\hosts``` (read about the network configuration above) into
-```
-89.163.167.173  www.bankersfx.com
-```
