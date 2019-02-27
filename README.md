@@ -1,4 +1,4 @@
-Bloody BonkersFX Core Volume: The truth revealed
+Bloody BankersFX Core Volume: The truth revealed
 ================================================
 
 ### Proof of concept that the BankersFX Core Volume indicator for MetaTrader 4 does not receice data from a proprietary data feed.
