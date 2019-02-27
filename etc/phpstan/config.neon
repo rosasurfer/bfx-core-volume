@@ -28,8 +28,6 @@ parameters:
 
     ignoreErrors:
         # intentionally ignore the following issues
-        - '/Call to ((static )?method|function) [^ ]+\(\) with incorrect case:/'                                    # We prefer camel-case standards.
-        - '/Class stdClass referenced with incorrect case: StdClass\b/'                                             # - dito -
         - '/Array \(([^ ]+)\[\]\) does not accept (\1\|)?null\b/'                                                   # NULL is a value (not a type) and can always be assigned.
         - '/Array \(array<([^ ]+)>\) does not accept (\1\|)?null\b/'                                                # - dito -
         - '/(Static )?property [^ ]+ \(([^ ]+)\) does not accept (\2\|)?null\b/i'                                   # - dito -
@@ -38,8 +36,11 @@ parameters:
         - '/Parameter #[0-9]+ [^ ]+ of class [^ ]+ constructor expects ([^ ]+), (\1\|)?null given\b/'               # - dito -
         - '/Parameter #[0-9]+ [^ ]+ of (static )?(function|method) [^ ]+ expects ([^ ]+), (\3\|)?null given\b/'     # - dito -
         - '/Calling method [^ ]+\(\) on possibly null value of type [^ ]+\|null\b/'
-        - "/Casting to (bool|int|float|string) something that's already (bool|int|float|string)/"                   # PHPStan ignores non-initialized vars
+        - "/Casting to (bool|int|float|string) something that's already (bool|int|float|string)/"                   # PHPStan contradicts itself by treating NULL as a value.
         - '/Strict comparison using [=!]== between (int|string) and null will always evaluate to (true|false)\b/'
+
+        # PHPdoc bug
+        - '/Parameter #1 \$arg of function extract is passed by reference, so it expects variables only\b/'
 
         # false positives since v0.9
         - '/PHPDoc tag @param for parameter \$[^ ]+ with type array(<[^ |]+(\|[^ |]+)?>)? is not subtype of native type array<int, mixed>/'

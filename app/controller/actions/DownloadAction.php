@@ -25,7 +25,7 @@ class DownloadAction extends Action {
             0 => ['BankersFX Core Volume.ex4', $config['app.dir.root'].'/etc/mql/indicators/BankersFX CVI v1.20.0.ex4'],
             1 => ['BankersFX Lib.ex4',         $config['app.dir.root'].'/etc/mql/libraries/BankersFX Lib.ex4'         ],
         ];
-        if (!isSet($files[$file])) {
+        if (!isset($files[$file])) {
             $request->setActionError('file', 'error: Unknown file identifier');
             return 'redirect.home';
         }
@@ -34,13 +34,13 @@ class DownloadAction extends Action {
         if (is_file($fullFilename)) {
             // prepare download
             header('Content-Type: application/octet-stream');
-            header('Content-Disposition: attachment; filename="'.rawUrlDecode(baseName($simpleFilename)).'"');
-            header('Content-Length: '.fileSize($fullFilename));
+            header('Content-Disposition: attachment; filename="'.rawurldecode(basename($simpleFilename)).'"');
+            header('Content-Length: '.filesize($fullFilename));
 
             // make the download non-cacheable
             header('Pragma: private');
             header('Cache-control: private');
-            header('Expires: '.gmDate(DATE_RFC2822, time() - 1*YEAR));
+            header('Expires: '.gmdate(DATE_RFC2822, time() - 1*YEAR));
 
             // erase an existing output buffer and work around an IE bug (Content-Disposition is ignored)
             ob_get_level() && ob_end_clean();
@@ -50,8 +50,8 @@ class DownloadAction extends Action {
             (session_status()==PHP_SESSION_ACTIVE) && session_write_close();
 
             // serve the file
-            $hFile = fOpen($fullFilename, 'rb');
-            fPassThru($hFile);
+            $hFile = fopen($fullFilename, 'rb');
+            fpassthru($hFile);
             fclose($hFile);
             return null;
         }

@@ -1,20 +1,30 @@
 Bloody BankersFX Core Volume: The truth revealed
 ================================================
 
+[![Build Status](https://scrutinizer-ci.com/g/rosasurfer/bfx-core-volume/badges/build.png?b=master)](https://scrutinizer-ci.com/g/rosasurfer/bfx-core-volume/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rosasurfer/bfx-core-volume/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rosasurfer/bfx-core-volume/?branch=master)
+
+
 ### Proof of concept that the BankersFX Core Volume indicator for MetaTrader 4 does not receice data from a proprietary data feed.
 
 A purely educational test case. It simulates a BankersFX license server and shows that the claim the indicator is feeded by
-institutional order flow does not hold true.
+institutional order flow does not hold true. Actually BankersFX charges for a modified MACD feeded by the user's broker.  
 
 
 Demonstration
 -------------
-The project is hosted on a [demo server](http://bfx.rosasurfer.com/). To use the indicator with the demo as a license server 
-(and spare project installation) change the line in
-```C:\Windows\System32\drivers\etc\hosts``` (read about the network configuration below) into
+The project is hosted on a [demo server](http://bfx.rosasurfer.com/). The indicator is included and can be downloaded 
+[here](etc/mql). It consists of an MQL indicator and an MQL library. To use the indicator with the demo server as license
+server (and spare project installation) change the line in ```C:\Windows\System32\drivers\etc\hosts``` (read about the
+network configuration below) into
 ```
 89.163.167.173  www.bankersfx.com
 ```
+
+
+Support
+-------
+[https://www.forexfactory.com/showthread.php?p=11845781](https://www.forexfactory.com/showthread.php?p=11845781)
 
 
 Requirements
@@ -60,8 +70,8 @@ Test case to prove that the data displayed by the BankersFX Core Volume indicato
 
 Usage
 -----
-Use the provided indicator as usual (see ```etc/mql/```). The indicator consists of an indicator file which goes into 
-```{terminal-data-directory}/mql4/indicators/``` and a library file which goes into ```{terminal-data-directory}/mql4/libraries/```.  
+Use the provided indicator as usual. See the downloads in [```etc/mql/```](etc/mql). The indicator consists of an indicator
+which goes into ```{terminal-data-directory}/mql4/indicators/``` and a library which goes into ```{terminal-data-directory}/mql4/libraries/```.  
 
 As license code (aka the unique user id) enter **BANKERSSCAM** (11 capital letters) regardless of the MetaTrader account type 
 (demo or real).
