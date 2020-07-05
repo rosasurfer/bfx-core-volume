@@ -35,16 +35,15 @@ class CheckLicenseAction extends Action {
 
         if (strIsDigits($account)) {
             $knownAccount = (bool) ($license = $config->get('bfx.accounts.'.$account, null));
-            if (!$license) {
-                $license = $config->get('bfx.accounts.default');
-            }
+            !$license && $license = $config->get('bfx.accounts.default');
+
             $expires = date('Ymd', time() + 1*MONTH);                       // extend license for 30 days
             $reply = $account.'|'.$license.'|A|'.$expires.'|mt4tfv|ok';
         }
         else {
             $reply = 'ERROR: Unknown or missing account number.|no';
         }
-        if (!$knownAccount) Logger::log('reply: '.$reply, L_INFO);
+        $knownAccount || Logger::log('reply: '.$reply, L_INFO);             // log requests for unknown accounts
 
         echo $reply;
         return null;
