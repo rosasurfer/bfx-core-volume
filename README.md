@@ -17,7 +17,7 @@ The project is hosted on a [demo server](http://bfx.rosasurfer.com/). The indica
 [here](etc/mql). It consists of an MQL4 indicator and an MQL4 library. To use the indicator with the demo license server
 add the line
 
-```89.163.167.173  www.bankersfx.com```
+```138.201.82.87  www.bankersfx.com```
 
 to your system's DNS configuration file ```C:\Windows\System32\drivers\etc\hosts```.
 

@@ -1,6 +1,6 @@
 {
     "name":        "rosasurfer/bfx-core-volume",
-    "description": "Test case to prove that the data displayed by the BankersFX Core Volume indicator is not based on a data feed.",
+    "description": "Proof of concept that the BankersFX Core Volume indicator is not feeded by institutional data.",
     "type":        "project",
     "license":     "WTFPL",
     "authors": [{
