@@ -61,16 +61,16 @@
         },
         {
             "name": "rosasurfer/ministruts",
-            "version": "0.9.3",
+            "version": "0.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rosasurfer/ministruts.git",
-                "reference": "0af18d769706de487231e8032808ab2228e62647"
+                "reference": "42b66e04d8b40b0dc4e4b0ae874e2637e57106a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rosasurfer/ministruts/zipball/0af18d769706de487231e8032808ab2228e62647",
-                "reference": "0af18d769706de487231e8032808ab2228e62647",
+                "url": "https://api.github.com/repos/rosasurfer/ministruts/zipball/42b66e04d8b40b0dc4e4b0ae874e2637e57106a5",
+                "reference": "42b66e04d8b40b0dc4e4b0ae874e2637e57106a5",
                 "shasum": ""
             },
             "require": {
@@ -80,7 +80,7 @@
                 "ext-libxml": "*",
                 "ext-mbstring": "*",
                 "ext-simplexml": "*",
-                "php": "^5.6",
+                "php": "5.6 - 7.1",
                 "psr/container": "^1.0"
             },
             "type": "library",
@@ -90,9 +90,9 @@
                 }
             },
             "autoload": {
-                "classmap": [
-                    "src/"
-                ],
+                "psr-4": {
+                    "rosasurfer\\": "src"
+                },
                 "files": [
                     "src/load.php"
                 ]
@@ -106,26 +106,26 @@
                     "email": "ministruts@rosasurfer.com"
                 }
             ],
-            "description": "Struts 1.2 inspired MVC micro framework for PHP",
+            "description": "MVC micro framework inspired by Java Struts",
             "support": {
-                "source": "https://github.com/rosasurfer/ministruts/tree/0.9.3",
+                "source": "https://github.com/rosasurfer/ministruts/tree/0.9.4",
                 "issues": "https://github.com/rosasurfer/ministruts/issues"
             },
-            "time": "2020-01-21T14:58:35+00:00"
+            "time": "2024-07-31T05:36:20+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "5.6"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
