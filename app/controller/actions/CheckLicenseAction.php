@@ -22,7 +22,7 @@ class CheckLicenseAction extends Action {
         if (false && !$request->isSecure()) {
             $url = $request->getUrl();
             $url = 'https'.strRight($url, -4);
-            return new ActionForward('generic', $url, $redirect=true);
+            return new ActionForward('generic', $url, true);
         }
         $config = $this->di()['config'];
 

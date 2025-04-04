@@ -10,11 +10,11 @@
 <body>
 Test case to prove that the data displayed by the BankersFX Core Volume indicator is not based on a data feed.
 
-<?
-/** @var Request $request */
+<?php
+/** @var \rosasurfer\ministruts\Request $request */
 foreach ($request->getActionMessages() as $message) {?>
     <div class="alert alert-danger textcenter"><p><?=hsc($message)?></p></div>
-<?}?>
+<?php } ?>
 
 </body>
 </html>
