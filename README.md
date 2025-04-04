@@ -5,16 +5,16 @@ Bloody BankersFX Core Volume: The truth revealed
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rosasurfer/bfx-core-volume/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rosasurfer/bfx-core-volume/?branch=master)
 
 
-### Proof that the BankersFX Core Volume indicator for MetaTrader4 does not receive data from an institutional data feed.
+### Proof that the BankersFX Core Volume indicator for MetaTrader4 does not receive any institutional data.
 
 This project simulates a BankersFX license server and shows that the claim the indicator is feeded by institutional order
-data is not true. In fact BankersFX charges money for a modified MACD which is feeded by the user's MT4 broker.
+data is not true. In fact BankersFX charges money for a modified MACD which uses the underlying price data.
 
 
 Demonstration
 -------------
 The project is hosted on a [demo server](http://bfx.rosasurfer.com/). The indicator is included and can be downloaded
-[here](etc/mql). It consists of an MQL4 indicator and an MQL4 library. To use the indicator with the demo license server
+[here](etc/mql). It consists of an MQL4 indicator and an MQL4 library. To use the indicator with the demo server
 add the line
 
 ```138.201.82.87  www.bankersfx.com```
@@ -25,8 +25,8 @@ As input parameter "unique user id" (aka the license code) enter **BANKERSSCAM**
 MT4 accounts (demo or real).
 
 
-Support
--------
+Documentation
+-------------
 [https://www.forexfactory.com/showthread.php?p=11845781](https://www.forexfactory.com/showthread.php?p=11845781)
 
 
@@ -50,12 +50,12 @@ php composer.phar install
 ```
 
 * Configure a web server for the project. For Apache adjust one of the predefined templates in ```etc/httpd/apache*.conf```.
-  If you want to use SSL adjust the paths to your server's SSL certificates (SSL is **not** required).
+  SSL is not required.
 
 * Edit your system's DNS configuration and point the domains defined in the templates to your local machine. To do this open
-  the file ```C:\Windows\System32\drivers\etc\hosts``` in a **plain-text editor** (e.g. Notepad). You may need admin
-  rights to edit the file (see [Edit The Hosts File in Windows 7/8/10](https://www.thewindowsclub.com/hosts-file-in-windows)).
-  Add the following line to the file:
+  the file ```C:\Windows\System32\drivers\etc\hosts``` in a **plain-text editor** (e.g. Notepad). You need admin rights to edit 
+  the file (see [Edit The Hosts File in Windows 7/8/10](https://www.thewindowsclub.com/hosts-file-in-windows)).
+  Add the following line:
 ```
 127.0.0.1   local.bfx.rosasurfer.com  www.bankersfx.com
 ```
@@ -64,7 +64,7 @@ php composer.phar install
   [http://local.bfx.rosasurfer.com/](http://local.bfx.rosasurfer.com/) and
   [http://www.bankersfx.com/](http://www.bankersfx.com/) will display the following message:
 ```
-Test case to prove that the data displayed by the BankersFX Core Volume indicator is not based on a data feed.
+Test case proving that the BankersFX Core Volume indicator does not use institutional data.
 ```
 
 
