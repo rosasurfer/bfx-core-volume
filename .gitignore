@@ -25,7 +25,6 @@ nbactions.xml
 
 # ignore the following folders and files
 /bin/cgi/php.ini
-/etc/httpd/ssl/
 /etc/log/
 /etc/tmp/
 /vendor/

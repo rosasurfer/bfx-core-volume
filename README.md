@@ -50,7 +50,7 @@ php composer.phar install
 ```
 
 * Configure a web server for the project. For Apache adjust one of the predefined templates in ```etc/httpd/apache*.conf```.
-  SSL is not required.
+  SSL is not needed.
 
 * Edit your system's DNS configuration and point the domains defined in the templates to your local machine. To do this open
   the file ```C:\Windows\System32\drivers\etc\hosts``` in a **plain-text editor** (e.g. Notepad). You need admin rights to edit 
@@ -66,11 +66,6 @@ php composer.phar install
 ```
 Test case proving that the BankersFX Core Volume indicator does not use institutional data.
 ```
-
-
-* Load the secure URL [https://www.bankersfx.com/](https://www.bankersfx.com/) and note the security warning about the invalid
-  SSL certificate (the certificate is self-signed and included). Add a permanent security exception for this
-  certificate by following the instructions in [Install a Root Certificate in Internet Explorer](https://www.poweradmin.com/help/sslhints/ie.aspx).
 
 
 Usage
