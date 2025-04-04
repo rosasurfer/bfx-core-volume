@@ -19,11 +19,16 @@ nbactions.xml
 
 # never ignore the following files
 !.gitattributes
+!.gitkeep
 !.htaccess
 
 
 # ignore the following folders and files
-vendor/
+/bin/cgi/php.ini
+/etc/httpd/ssl/
+/etc/log/
+/etc/tmp/
+/vendor/
 /composer
 /composer.phar
 desktop.ini
@@ -31,5 +36,3 @@ thumbs.db
 
 config.*properties
 !config.dist.properties
-/data/
-/deploy
