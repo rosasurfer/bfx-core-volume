@@ -1,15 +1,18 @@
 <?php
+declare(strict_types=1);
+
 namespace rosasurfer\bfx\controller\actions;
 
-use rosasurfer\log\Logger;
-use rosasurfer\ministruts\Action;
-use rosasurfer\ministruts\Request;
-use rosasurfer\ministruts\Response;
+use rosasurfer\ministruts\config\ConfigInterface as Config;
+use rosasurfer\ministruts\log\Logger;
+use rosasurfer\ministruts\struts\Action;
+use rosasurfer\ministruts\struts\Request;
+use rosasurfer\ministruts\struts\Response;
 
-use function rosasurfer\strIsDigits;
+use function rosasurfer\ministruts\strIsDigits;
 
-use const rosasurfer\L_INFO;
-use const rosasurfer\MONTH;
+use const rosasurfer\ministruts\L_INFO;
+use const rosasurfer\ministruts\MONTH;
 
 
 /**
@@ -22,6 +25,7 @@ class CheckLicenseAction extends Action {
      * {@inheritdoc}
      */
     public function execute(Request $request, Response $response) {
+        /** @var Config $config */
         $config = $this->di()['config'];
 
         // request:  GET /Paypal/TFV/index.php?id=TSR&lic={encoded-license}&rn=9&mt4={account}&ec=1
@@ -29,7 +33,8 @@ class CheckLicenseAction extends Action {
         //       or: ERROR: {error-msg}|no
 
         $knownAccount = false;
-        $account = $request->getParameter('mt4');
+        $input = $request->input();
+        $account = $input->get('mt4', '');
 
         if (strIsDigits($account)) {
             $license = $config->get('bfx.accounts.'.$account, null);

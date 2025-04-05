@@ -24,7 +24,7 @@ nbactions.xml
 
 
 # ignore the following folders and files
-/bin/cgi/php.ini
+/config/struts-config.dtd
 /etc/tmp/
 /log/
 /vendor/
