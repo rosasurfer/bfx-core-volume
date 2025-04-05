@@ -40,7 +40,7 @@ command -v git >/dev/null || { error "ERROR: Git binary not found."; exit 1; }
 
 
 # resolve directories
-CWD=$(readlink -e "$PWD")
+CWD=$(realpath "$PWD")
 SCRIPT_DIR=$(dirname "$0")
 TOP_LEVEL_DIR=$(git rev-parse --show-toplevel)
 GIT_HOOK_DIR=$(git rev-parse --git-dir)'/hooks'
@@ -52,13 +52,13 @@ if [ $(type -P cygpath.exe) ]; then
     SCRIPT_DIR=$(cygpath -m "$SCRIPT_DIR")
     TOP_LEVEL_DIR=$(cygpath -m "$TOP_LEVEL_DIR")
     GIT_HOOK_DIR=$(cygpath -m "$GIT_HOOK_DIR")
-fi    
+fi
 
 
 # make sure we run in the repo's root directory (as to not to mess-up nested repos)
-if [ "$CWD" != "$TOP_LEVEL_DIR" ]; then
-    error "ERROR: $(basename "$0") must run in the repository's root directory."; exit 1
-fi
+#if [ "$CWD" != "$TOP_LEVEL_DIR" ]; then
+#    error "ERROR: $(basename "$0") must run in the repository's root directory."; exit 1
+#fi
 
 
 # call copy_hook() with all hooks specified in "composer.json"

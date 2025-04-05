@@ -4,10 +4,10 @@
 #
 
 # By default PHP FastCGI processes exit after 500 requests.
-# FcgidMaxRequestsPerProcess in apache.conf must be <= PHP_FCGI_MAX_REQUESTS.
+# FcgidMaxRequestsPerProcess in "apache.conf" must be <= PHP_FCGI_MAX_REQUESTS.
 export PHP_FCGI_MAX_REQUESTS=2000
 
-# Use a custom php.ini in this directory or the system configuration if no custom file exists.
+# Use a custom "php.ini" in this directory or the system configuration if no custom file exists.
 # If a custom file exists the system configuration will be completely skipped.
 export PHPRC=./
 

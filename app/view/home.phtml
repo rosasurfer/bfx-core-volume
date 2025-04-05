@@ -11,7 +11,11 @@
 Test case proving that the BankersFX Core Volume indicator does not use institutional data.
 
 <?php
-/** @var \rosasurfer\ministruts\Request $request */
+use rosasurfer\ministruts\Request;
+
+use function rosasurfer\hsc;
+
+/** @var Request $request */
 foreach ($request->getActionMessages() as $message) {?>
     <div class="alert alert-danger textcenter"><p><?=hsc($message)?></p></div>
 <?php } ?>
