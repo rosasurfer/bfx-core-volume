@@ -1,29 +1,26 @@
 {
-    "name":        "rosasurfer/bfx-core-volume",
-    "description": "Proof of concept that the BankersFX Core Volume indicator is not feeded by institutional data.",
-    "type":        "project",
-    "license":     "WTFPL",
-    "authors": [{
-        "name":  "Peter Walther",
-        "email": "bfx@rosasurfer.com"
-    }],
-    "config": {
-        "platform": {
-            "php": "5.6"
-        },
-        "optimize-autoloader": true
+  "name":        "rosasurfer/bfx-core-volume",
+  "description": "Proof that the BankersFX Core Volume indicator is not feeded by institutional data.",
+  "type":        "project",
+  "license":     "Unlicense",
+  "authors": [{
+    "name":  "Peter Walther",
+    "email": "bfx@rosasurfer.com"
+  }],
+  "config": {
+    "platform": {
+      "php": "7.4"
     },
-    "repositories": [
-        { "type": "vcs", "url": "https://github.com/rosasurfer/ministruts" }
-    ],
-    "require": {
-        "php":                   ">=5.6",
-        "rosasurfer/ministruts": "^0.9"
-    },
-    "autoload": {
-        "classmap": ["app/"]
-    },
-    "scripts": {
-        "post-install-cmd": "bash bin/git/check-setup.sh post-checkout post-merge"
-    }
+    "optimize-autoloader": true
+  },
+  "require": {
+    "php":                   "7.4 - 8",
+    "rosasurfer/ministruts": "^0.11"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.11"
+  },
+  "autoload": {
+    "classmap": ["app/"]
+  }
 }

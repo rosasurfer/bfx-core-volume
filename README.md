@@ -14,7 +14,7 @@ data is not true. In fact BankersFX charges money for a modified MACD which uses
 Demonstration
 -------------
 The project is hosted on a [demo server](http://bfx.rosasurfer.com/). The indicator is included and can be downloaded
-[here](etc/mql). It consists of an MQL4 indicator and an MQL4 library. To use the indicator with the demo server
+[here](etc/mql4). It consists of an MQL4 indicator and an MQL4 library. To use the indicator with the demo server
 add the line
 
 ```138.201.82.87  www.bankersfx.com```
@@ -32,7 +32,7 @@ Documentation
 
 Requirements
 ------------
- * [PHP 5.6](http://php.net/) or higher
+ * [PHP 7.4](http://php.net/) or higher
  * a web server, e.g. [Apache](https://httpd.apache.org/)
 
 
@@ -57,11 +57,11 @@ php composer.phar install
   the file (see [Edit The Hosts File in Windows 7/8/10](https://www.thewindowsclub.com/hosts-file-in-windows)).
   Add the following line:
 ```
-127.0.0.1   local.bfx.rosasurfer.com  www.bankersfx.com
+127.0.0.1   local.bankersfx.com  www.bankersfx.com
 ```
 
 * Restart the web server and test the setup. If everything works correctly both URLs
-  [http://local.bfx.rosasurfer.com/](http://local.bfx.rosasurfer.com/) and
+  [http://local.bankersfx.com/](http://local.bankersfx.com/) and
   [http://www.bankersfx.com/](http://www.bankersfx.com/) will display the following message:
 ```
 Test case proving that the BankersFX Core Volume indicator does not use institutional data.
@@ -70,7 +70,7 @@ Test case proving that the BankersFX Core Volume indicator does not use institut
 
 Usage
 -----
-Use the BankersFX indicator as usual (see downloads in [```etc/mql/```](etc/mql)). The BankersFX indicator goes into
+Use the BankersFX indicator as usual (see downloads in [```etc/mql4/```](etc/mql)). The BankersFX indicator goes into
 ```{mt4-data-directory}/mql4/indicators/``` and the BankersFX library goes into ```{mt4-data-directory}/mql4/libraries/```.
 
 As input parameter "unique user id" (aka the license code) enter **BANKERSSCAM** (11 capital letters). This code works for all
