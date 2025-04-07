@@ -1,6 +1,0 @@
-#
-# Protect the project from accidently being exposed to the web by a mis-configured web server.
-# Intentionally trigger a server error if mod_rewrite is disabled.
-#
-RewriteEngine On
-RewriteRule   (.*)  web/$1  [L]

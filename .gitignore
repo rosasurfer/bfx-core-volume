@@ -1,35 +1,40 @@
+# never ignore the following files
+!.gitattributes
+!.gitkeep
+!.htaccess
+
 # ignore Eclipse folders and files
-/.externalToolBuilders/
-/.settings/
+/.externalToolBuilders
+/.settings
 /.buildpath
 /.project*
 
 # ignore IntelliJ folders and files
-/.idea/
+/.idea
 
 # ignore NetBeans folders and files
-.nb-gradle/
-nbbuild/
-nbdist/
-nbproject/
+.nb-gradle
+nbbuild
+nbdist
+nbproject
 nbactions.xml
-/build/
-/dist/
+/build
+/dist
 
-
-# never ignore the following files
-!.gitattributes
-!.htaccess
-
+# ignore VSCode folders and files
+/.vscode
 
 # ignore the following folders and files
-vendor/
+/config/struts-config.dtd
+/etc/phpstan/phpstan.neon
+/etc/tmp
+/log
+/php-error.log
+
+/vendor
 /composer
 /composer.phar
-desktop.ini
-thumbs.db
+/composer*.lock
 
 config.*properties
 !config.dist.properties
-/data/
-/deploy

@@ -15,9 +15,7 @@
 
     <action-mappings>
         <mapping name="home"           path="/"  include="home.phtml"/>
-        
-        <mapping name="check-license"  path="/Paypal/TFV/index.php"     action="CheckLicenseAction"/>
-        <mapping name="download"       path="/Paypal/TFV/download.php"  action="DownloadAction"/>
+        <mapping name="check-license"  path="/Paypal/TFV/index.php"  action="CheckLicenseAction"/>
     </action-mappings>
 
 </struts-config>
