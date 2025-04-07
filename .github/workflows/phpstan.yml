@@ -1,0 +1,66 @@
+#
+# Run a PHPStan check using the configuration in "/etc/phpstan/".
+# If the most recent commit message contains "[skip phpstan]" this workflow is skipped.
+#
+name: PHPStan
+
+on:
+  push:
+    branches:
+      - master
+      - development
+
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  phpstan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0                                # fetch all branches and history (to access the source branch of PRs)
+
+      # ------------------------------------------------------------------------------------------------------------------------------------
+      - name: Validate "composer.json"
+        run: |
+          composer validate --strict
+
+      # ------------------------------------------------------------------------------------------------------------------------------------
+      - name: Check commit message for "[skip phpstan]"
+        run: |
+          SKIP_PHPSTAN=false
+          REF_NAME=
+          if   [[ "$GITHUB_EVENT_NAME" == "push"         ]]; then REF_NAME="$GITHUB_REF_NAME"
+          elif [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then REF_NAME="$GITHUB_HEAD_REF"
+          else
+            echo "unsupported event: $GITHUB_EVENT_NAME"
+            exit 1
+          fi
+          COMMIT_MSG=$(git log -1 --format="%B" "origin/$REF_NAME")
+          MAGIC_KEY=$(echo "$COMMIT_MSG" | (grep -io "\[skip phpstan\]" || true) | tail -1)
+
+          if [[ -n "$MAGIC_KEY" ]]; then
+            echo "Magic commit message found: $MAGIC_KEY"
+            SKIP_PHPSTAN=true
+          fi
+          echo "SKIP_PHPSTAN: $SKIP_PHPSTAN"
+          echo "SKIP_PHPSTAN=$SKIP_PHPSTAN" >> "$GITHUB_ENV"
+
+      # ------------------------------------------------------------------------------------------------------------------------------------
+      - name: Run PHPStan
+        if:   env.SKIP_PHPSTAN != 'true'
+        run: |
+          echo "Installing Composer dependencies..."
+          composer install --no-progress
+
+          echo "Generating PHPStan report..."
+          bin/phpstan --no-progress -vvv
+
+      # ------------------------------------------------------------------------------------------------------------------------------------
