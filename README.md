@@ -7,15 +7,14 @@ Bloody BankersFX Core Volume: The truth revealed
 
 ### Proof that the [BankersFX Core Volume](https://web.archive.org/web/20180412123846/https://www.bankersfx.com/) indicator for MetaTrader4 does not receive any institutional data.
 
-This project simulates a BankersFX license server and shows that the claim the indicator is feeded by institutional order
-data is not true. In fact BankersFX charges money for a modified MACD which uses the underlying price data.
+This project simulates a BankersFX license server. It shows that the claim that the indicator is linked to an institutional
+data feed is not true. In fact, BankersFX charge money for an oscillator that uses only the client's price data.
 
 
 Demonstration
 -------------
 The project is hosted on a [demo server](http://bfx.rosasurfer.com/). The indicator is included and can be downloaded
-[here](etc/mql4). It consists of an MQL4 indicator and an MQL4 library. To use the indicator with the demo server
-add the line
+[here](etc/mql4). It consists of an MQL4 indicator and an MQL4 library. To use the indicator with the demo server add the line
 
 ```138.201.82.87  www.bankersfx.com```
 
@@ -77,4 +76,4 @@ Use **BANKERSSCAM** (11 capital letters) for input parameter `unique user id` (a
 for all MT4 accounts (demo and real).
 
 
-ps: The acronym "BankersFX TFV" stands for "**T**rade with **F**ake **V**olume".
+ps: Imho the acronym "BankersFX TFV" stands for "**T**rade with **F**ake **V**olume".
