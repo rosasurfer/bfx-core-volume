@@ -1,4 +1,5 @@
 # never ignore the following files
+!.git-blame-ignore-revs
 !.gitattributes
 !.gitkeep
 !.htaccess
@@ -26,6 +27,7 @@ nbactions.xml
 
 # ignore the following folders and files
 /config/struts-config.dtd
+/etc/httpd/include-custom.conf
 /etc/phpstan/phpstan.neon
 /etc/tmp
 /log
@@ -38,3 +40,4 @@ nbactions.xml
 
 config.*properties
 !config.dist.properties
+!.env.dist
