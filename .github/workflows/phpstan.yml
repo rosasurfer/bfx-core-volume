@@ -1,6 +1,5 @@
 #
-# Run a PHPStan check using the configuration in "/etc/phpstan/".
-# If the most recent commit message contains "[skip phpstan]" this workflow is skipped.
+# Run a PHPStan check. Skipped if the commit message contains "[skip phpstan]".
 #
 name: PHPStan
 
@@ -27,33 +26,23 @@ jobs:
         with:
           fetch-depth: 0                                # fetch all branches and history (to access the source branch of PRs)
 
-      # ------------------------------------------------------------------------------------------------------------------------------------
       - name: Validate "composer.json"
         run: |
           composer validate --strict
 
-      # ------------------------------------------------------------------------------------------------------------------------------------
       - name: Check commit message for "[skip phpstan]"
         run: |
           SKIP_PHPSTAN=false
           REF_NAME=
-          if   [[ "$GITHUB_EVENT_NAME" == "push"         ]]; then REF_NAME="$GITHUB_REF_NAME"
-          elif [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then REF_NAME="$GITHUB_HEAD_REF"
-          else
-            echo "unsupported event: $GITHUB_EVENT_NAME"
-            exit 1
-          fi
-          COMMIT_MSG=$(git log -1 --format="%B" "origin/$REF_NAME")
-          MAGIC_KEY=$(echo "$COMMIT_MSG" | (grep -io "\[skip phpstan\]" || true) | tail -1)
+          [[ "$GITHUB_EVENT_NAME" == "push"         ]] && REF_NAME="$GITHUB_REF_NAME"
+          [[ "$GITHUB_EVENT_NAME" == "pull_request" ]] && REF_NAME="$GITHUB_HEAD_REF"
+          [[ -z "$REF_NAME" ]] && { echo "ERROR: unsupported CI event: $GITHUB_EVENT_NAME"; exit 1; }
 
-          if [[ -n "$MAGIC_KEY" ]]; then
-            echo "Magic commit message found: $MAGIC_KEY"
-            SKIP_PHPSTAN=true
-          fi
-          echo "SKIP_PHPSTAN: $SKIP_PHPSTAN"
+          COMMIT_MSG=$(git log -1 --format="%B" "origin/$REF_NAME")
+          grep -iq '\[skip phpstan\]' <<< "$COMMIT_MSG" && { echo "Magic commit message found: [skip phpstan]"; SKIP_PHPSTAN=true; }
+          echo "Skip PHPStan: $SKIP_PHPSTAN"
           echo "SKIP_PHPSTAN=$SKIP_PHPSTAN" >> "$GITHUB_ENV"
 
-      # ------------------------------------------------------------------------------------------------------------------------------------
       - name: Run PHPStan
         if:   env.SKIP_PHPSTAN != 'true'
         run: |
@@ -61,6 +50,4 @@ jobs:
           composer install --no-progress
 
           echo "Generating PHPStan report..."
-          bin/phpstan --no-progress -vvv
-
-      # ------------------------------------------------------------------------------------------------------------------------------------
+          bin/phpstan --no-progress -v
